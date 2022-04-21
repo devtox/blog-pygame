@@ -10,13 +10,11 @@ The following are some brief instructions on how to display images with PyGame.T
 ```python
 pygame.display.set_mode((400, 300))
 ```
-
 Once you have created your PyGame display, you can load images into it using the pygame.image.load() function. This function takes one argument: the path to the image file you want to load (typically something like 'my-image-file.png'). For example, if you have an image file named 'player-sprite.png' in your current directory, you could load it into your PyGame display like so:pygame.display.set_mode((400, 300))
 
 ```python
 player_image = pygame.image.load('player-sprite.png')
 ```
-
 Once you have loaded an image with pygame.image.load(), you can display it on your PyGame display by calling the blit() function on your display surface and passing it the image and x/y coordinates of where you want to draw the top-left corner of the image:
 
 ```python
@@ -36,7 +34,6 @@ pygame.init()
 size=width,height=640,480
 screen=pygame.display.set_mode(size)
 ```
-
 Now we will put a picture fill in this window.
 
 ```python
@@ -77,12 +74,13 @@ while True:
 pygame.quit()
 ```
 
-The code in while True in the figure, pygame.event.get() can get the event queue, use for...in to iterate through the events, and then determine the event type according to the type property, here the event handling is similar to the GUI, into event.type is equal to pygame.QUIT means the detection of the close window KEYDOWN means the keyboard press event, pygame.MOUSEBUTTONDUWN means the mouse press event, etc.
+The code loops using the while True loop. The call *pygame.event.get()* can get the event queue, used to iterate through the events, and then determine the event type according to the type property. Event handling is similar to the GUI, into event.type is equal to pygame.QUIT means the detection of the close window. The event *pygame.KEYDOWN* means the keyboard press event, *pygame.MOUSEBUTTONDUWN* means the mouse press event, etc.
 
-The following is the image we intend to insert, it is 1920 x 1080, and our window is 700 x 600, so we intend to shrink it a bit and add it in.
+![pygame load image](/images/pygame-image.png)
 
-Here we need to use pygame.transform.scale(surface,(width,heigth)), parameter 1 is a surface containing the image to be used, the second parameter is a tuple of the image size after scaling, it returns a surface of the scaled image
- We added the function to our program and the result is as follows
+The following image is large, and so you can scale it. In the example below we use *pygame.transform.scale(surface,(width,heigth))*. In this call parameter 1 is a surface containing the image to be used, the second parameter is a tuple of the image size after scaling, it returns a surface of the scaled image. Because it returns a new scaled image, you need to store its output.
+
+We added the function to our program and the result is as follows:
 
 ```python
 img=pygame.image.load("1.jpg")
@@ -120,6 +118,8 @@ while True:
     pygame.display.flip()
 pygame.quit()
 ```
+
+![pygame scale image](images/pygame-scale-image.png)
 
 That way, the image is scaled in the window.
 
