@@ -56,10 +56,10 @@ screen=pygame.display.set_mode(size)
 color=(0,0,0) 	
 
 # load image
-charlotte=pygame.image.load("1.jpg")
+img=pygame.image.load("1.jpg")
 
 # get rectangular area
-charlotterect=charlotte.get_rect()
+imgrect=img.get_rect()
 
 while True:
     for event in pygame.event.get():
@@ -70,7 +70,7 @@ while True:
     screen.fill(color)	
     
     # draw image
-    screen.blit(charlotte,charlotterect)
+    screen.blit(img,imgrect)
     
     # flip image
     pygame.display.flip()		
@@ -85,9 +85,9 @@ Here we need to use pygame.transform.scale(surface,(width,heigth)), parameter 1 
  We added the function to our program and the result is as follows
 
 ```python
-charlotte=pygame.image.load("1.jpg")
-charlotte=pygame.transform.scale(charlotte,size)
-charlotterect=charlotte.get_rect() # Get the rectangular area
+img=pygame.image.load("1.jpg")
+img=pygame.transform.scale(img,size)
+imgrect=img.get_rect() # Get the rectangular area
 ```
 
 Finally we can do this:
@@ -96,16 +96,16 @@ Finally we can do this:
 import sys
 import pygame
 
-charlotte=pygame.image.load("1.jpg")
-charlotterect=charlotte.get_rect()
-size=(int(charlotterect[2]/3),int(charlotterect[3]/3))
-charlotte=pygame.transform.scale(charlotte,size)
+img_=pygame.image.load("1.jpg")
+img_rect=img_.get_rect()
+size=(int(img_rect[2]/3),int(img_rect[3]/3))
+img_=pygame.transform.scale(img_,size)
 
-pygame.init()								
-screen=pygame.display.set_mode(size)	
-color=(0,0,0)									
-charlotte=pygame.transform.scale(charlotte,size)
-# charlotterect= (charlotte.get_rect()) 
+pygame.init()
+screen=pygame.display.set_mode(size)
+color=(0,0,0)
+img_=pygame.transform.scale(img_,size)
+# img_rect= (img_.get_rect())
 # pygame.init()
 # size=width,height=700,600
 # screen=pygame.display.set_mode(size)
@@ -116,7 +116,10 @@ while True:
          if event.type == pygame.KEYDOWN:
              sys.exit()
     screen.fill(color)
-    screen.blit(charlotte,charlotterect)
+    screen.blit(img_,img_rect)
     pygame.display.flip()
 pygame.quit()
 ```
+
+That way, the image is scaled in the window.
+
