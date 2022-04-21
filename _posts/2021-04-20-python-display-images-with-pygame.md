@@ -5,12 +5,16 @@ categories:
 - General
 ---
 
-The following are some brief instructions on how to display images with PyGame.The first thing you need to do is create a PyGame display. You can do this by calling the pygame.display.set_mode() function. This function takes two arguments: the width and height of the display in pixels. For example, to create a 400x300 pixel display, you would call:
+The following are some brief instructions on how to display images with PyGame.The first thing you need to do is create a PyGame display. 
+
+You can do this by calling the pygame.display.set_mode() function. This function takes two arguments: the width and height of the display in pixels. For example, to create a 400x300 pixel display, you would call:
 
 ```python
 pygame.display.set_mode((400, 300))
 ```
-Once you have created your PyGame display, you can load images into it using the pygame.image.load() function. This function takes one argument: the path to the image file you want to load (typically something like 'my-image-file.png'). For example, if you have an image file named 'player-sprite.png' in your current directory, you could load it into your PyGame display like so:pygame.display.set_mode((400, 300))
+Once you have created your PyGame display, you can load images into it using the pygame.image.load() function. This function takes one argument: the path to the image file you want to load (typically something like 'my-image-file.png'). 
+
+For example, if you have an image file named 'player-sprite.png' in your current directory, you could load it into your PyGame display like so:pygame.display.set_mode((400, 300))
 
 ```python
 player_image = pygame.image.load('player-sprite.png')
@@ -21,10 +25,21 @@ Once you have loaded an image with pygame.image.load(), you can display it on yo
 display_surface.blit(player_image, (0, 0))
 ```
 
+You can also use the pygame.transform module to do things like rotate or scale images before blitting them to your display:
+
+```python
+rotated_image = pygame.transform.rotate(player_image, 45)
+scaled_image = pygame.transform.scale(player_image, (100, 200))
+```
+The pygame.transform module has a number of built-in functions to implement flipping, rotating and deflating of images.
+
 ## display images
 
-The pygame.transform module has a number of built-in functions to implement flipping, rotating and deflating of images.
-Create a game window with width and height set to 640×480
+PyGame can load images in a variety of formats, including JPG and PNG. This makes it easy to use PyGame to display pictures stored in these popular formats.
+
+The following example loads an image. Image files are loaded with the pygame.image.load() function. This function returns a Surface which is the image itself. It consits of several steps, the first step is to load the pygame module and create a window.
+
+The code below creates a game window with width and height set to 640×480. It initializes Python using the method *pygame.init()*. 
 
 ```python
 import sys
@@ -34,7 +49,7 @@ pygame.init()
 size=width,height=640,480
 screen=pygame.display.set_mode(size)
 ```
-Now we will put a picture fill in this window.
+Now we will put a picture fill in this window. You can load an image with *pygame.image.load* with the parameter containing the filename or the path+filename. Then get the rect and draw it on the screen with *screen.blit*. 
 
 ```python
 import sys
