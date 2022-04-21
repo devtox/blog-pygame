@@ -12,6 +12,9 @@ You can do this by calling the pygame.display.set_mode() function. This function
 ```python
 pygame.display.set_mode((400, 300))
 ```
+
+## how to load images
+
 Once you have created your PyGame display, you can load images into it using the pygame.image.load() function. This function takes one argument: the path to the image file you want to load (typically something like 'my-image-file.png'). 
 
 For example, if you have an image file named 'player-sprite.png' in your current directory, you could load it into your PyGame display like so:
@@ -94,6 +97,8 @@ pygame.quit()
 The code loops using the while True loop. The call *pygame.event.get()* can get the event queue, used to iterate through the events, and then determine the event type according to the type property. Event handling is similar to the GUI, into event.type is equal to pygame.QUIT means the detection of the close window. The event *pygame.KEYDOWN* means the keyboard press event, *pygame.MOUSEBUTTONDUWN* means the mouse press event, etc.
 
 ![pygame load image](/images/pygame-display-image.png)
+
+## scale image
 
 The following image is large, and so you can scale it. In the example below we use *pygame.transform.scale(surface,(width,heigth))*. In this call parameter 1 is a surface containing the image to be used, the second parameter is a tuple of the image size after scaling, it returns a surface of the scaled image. Because it returns a new scaled image, you need to store its output.
 
