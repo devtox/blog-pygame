@@ -14,9 +14,11 @@ pygame.display.set_mode((400, 300))
 ```
 Once you have created your PyGame display, you can load images into it using the pygame.image.load() function. This function takes one argument: the path to the image file you want to load (typically something like 'my-image-file.png'). 
 
-For example, if you have an image file named 'player-sprite.png' in your current directory, you could load it into your PyGame display like so:pygame.display.set_mode((400, 300))
+For example, if you have an image file named 'player-sprite.png' in your current directory, you could load it into your PyGame display like so:
 
 ```python
+pygame.display.set_mode((400, 300))
+...
 player_image = pygame.image.load('player-sprite.png')
 ```
 Once you have loaded an image with pygame.image.load(), you can display it on your PyGame display by calling the blit() function on your display surface and passing it the image and x/y coordinates of where you want to draw the top-left corner of the image:
