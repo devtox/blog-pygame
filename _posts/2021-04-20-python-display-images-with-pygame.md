@@ -76,7 +76,7 @@ pygame.quit()
 
 The code loops using the while True loop. The call *pygame.event.get()* can get the event queue, used to iterate through the events, and then determine the event type according to the type property. Event handling is similar to the GUI, into event.type is equal to pygame.QUIT means the detection of the close window. The event *pygame.KEYDOWN* means the keyboard press event, *pygame.MOUSEBUTTONDUWN* means the mouse press event, etc.
 
-![pygame load image](/images/pygame-image.png)
+![pygame load image](/images/pygame-display-image.png)
 
 The following image is large, and so you can scale it. In the example below we use *pygame.transform.scale(surface,(width,heigth))*. In this call parameter 1 is a surface containing the image to be used, the second parameter is a tuple of the image size after scaling, it returns a surface of the scaled image. Because it returns a new scaled image, you need to store its output.
 
@@ -119,7 +119,7 @@ while True:
 pygame.quit()
 ```
 
-![pygame scale image](images/pygame-scale-image.png)
+![pygame scale image](/images/pygame-scale-image.png)
 
 That way, the image is scaled in the window.
 
